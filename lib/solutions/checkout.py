@@ -3,8 +3,7 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-	valids = ['a','b','c']
-	skus = skus.lower()
+	valids = ['A','B','C','D']
 
 	count = {}
 
@@ -33,6 +32,11 @@ def checkout(skus):
     		bCounter += 1
 
     	bAmount = bCounter*45 + 30
+
+    cAmount = count['c']*20
+    dAmount = count['d']*15
+
+    return aAmount + bAmount + cAmount + dAmount
 
 
 
