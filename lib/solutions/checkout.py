@@ -48,5 +48,4 @@ def checkout(skus):
 
   return aAmount + bAmount + cAmount + dAmount
 
-print checkout('ABCD')
 
