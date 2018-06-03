@@ -21,7 +21,7 @@ def checkout(skus):
     	count[char] = 1
 
 
-  if count['A'] >= 3:
+  if 'A' in count.keys() and count['A'] >= 3:
     i = count['A']
     aCounter = 0
     while i >= 3:
@@ -32,7 +32,8 @@ def checkout(skus):
   else:
   	aAmount = count['A'] * 50
 
-  if count['B'] >= 2:
+
+  if 'B' in count.keys() and count['B'] >= 2:
     j = count['B']
     bCounter = 0
     while j >= 2:
@@ -43,8 +44,14 @@ def checkout(skus):
   else:
   	bAmount = count['B'] * 30
 
-  cAmount = count['C'] * 20
-  dAmount = count['D'] * 15
+
+  if 'C' in count.keys():
+    cAmount = count['C'] * 20
+
+
+  if 'D' in count.keys():  
+    dAmount = count['D'] * 15
+    
 
   return aAmount + bAmount + cAmount + dAmount
 
