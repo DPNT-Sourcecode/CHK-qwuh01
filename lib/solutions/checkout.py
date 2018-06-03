@@ -18,6 +18,8 @@ def checkout(skus):
 
   aAmount, bAmount, cAmount, dAmount, eAmount, fAmount = 0, 0, 0, 0, 0, 0
 
+  noOfferPrices = {}
+
   count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E'), 'F': skus.count('F'),
   'G': skus.count('G'), 'H': skus.count('H'), 'I': skus.count('I'), 'J': skus.count('J'), 'K': skus.count('K'), 'L': skus.count('L'), 'M': skus.count('M'),
   'N': skus.count('N'), 'O': skus.count('O'), 'P': skus.count('P'), 'Q': skus.count('Q'), 'R': skus.count('R'), 'S': skus.count('S'), 'T': skus.count('T'),
