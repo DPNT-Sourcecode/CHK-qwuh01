@@ -29,7 +29,7 @@ def checkout(skus):
       aCounter += 1
 
       aAmount = aCounter*130 + i*50
-  else:
+  elif 'A' in count.keys():
   	aAmount = count['A'] * 50
 
 
@@ -41,7 +41,7 @@ def checkout(skus):
       bCounter += 1
 
       bAmount = bCounter*45 + j*30
-  else:
+  elif 'B' in count.keys():
   	bAmount = count['B'] * 30
 
 
@@ -51,8 +51,7 @@ def checkout(skus):
 
   if 'D' in count.keys():  
     dAmount = count['D'] * 15
-    
+
 
   return aAmount + bAmount + cAmount + dAmount
 
-print checkout("AAABB")
