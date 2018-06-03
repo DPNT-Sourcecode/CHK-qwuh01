@@ -6,10 +6,10 @@
 
 def checkout(skus):
 
-  if type(skus) != type(''):
+  if type(skus) != type(""):
     return -1
 
-  valids = ['A', 'B', 'C', 'D']
+  valids = ["A", "B", "C", "D"]
   aAmount, bAmount, cAmount, dAmount = 0, 0, 0, 0
 
   count = {}
@@ -21,37 +21,38 @@ def checkout(skus):
     	count[char] = 1
 
 
-  if 'A' in count.keys() and count['A'] >= 3:
-    i = count['A']
+  if "A" in count.keys() and count["A"] >= 3:
+    i = count["A"]
     aCounter = 0
     while i >= 3:
-      i = count['A'] % 3  
+      i = count["A"] % 3  
       aCounter += 1
 
       aAmount = aCounter*130 + i*50
-  elif 'A' in count.keys():
-  	aAmount = count['A'] * 50
+  elif "A" in count.keys():
+  	aAmount = count["A"] * 50
 
 
-  if 'B' in count.keys() and count['B'] >= 2:
-    j = count['B']
+  if "B" in count.keys() and count["B"] >= 2:
+    j = count["B"]
     bCounter = 0
     while j >= 2:
-      j = count['B'] % 2  
+      j = count["B"] % 2  
       bCounter += 1
 
       bAmount = bCounter*45 + j*30
-  elif 'B' in count.keys():
-  	bAmount = count['B'] * 30
+  elif "B" in count.keys():
+  	bAmount = count["B"] * 30
 
 
-  if 'C' in count.keys():
-    cAmount = count['C'] * 20
+  if "C" in count.keys():
+    cAmount = count["C"] * 20
 
 
-  if 'D' in count.keys():  
-    dAmount = count['D'] * 15
+  if "D" in count.keys():  
+    dAmount = count["D"] * 15
 
 
   return aAmount + bAmount + cAmount + dAmount
 
+print sum(1,2)
