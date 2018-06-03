@@ -16,14 +16,14 @@ def hOffer(value):
 	hCounter = value / 5 
 	hAmount = hCounter*45 + i*10
 
-    return hAmount
+	return hAmount
 
 def vOffer(value):
 	i = value % 2  
-    vCounter = value / 2 
-    vAmount = vCounter*90 + i*50
+	vCounter = value / 2 
+	vAmount = vCounter*90 + i*50
 
-    return vAmount
+	return vAmount
 
 def checkout(skus):
 
@@ -101,8 +101,8 @@ def checkout(skus):
 
   if count["H"] > 5 and count["H"] < 10:
   	i = count["H"] % 5  
-    hCounter = count["H"] / 5 
-    hAmount = hCounter*130 + i*10
+  	hCounter = count["H"] / 5 
+  	hAmount = hCounter*130 + i*10
   elif count["H"] >= 10:
   	i = count["H"] % 10  
     	aCounter = count["A"] / 10
@@ -136,10 +136,10 @@ def checkout(skus):
   else:
   	pAmount = count["P"] * 50
 
-  if count["V"] = 2:
+  if count["V"] == 2:
   	i = count["V"] % 2  
-    vCounter = count["V"] / 2 
-    vAmount = vCounter*90 + i*50
+  	vCounter = count["V"] / 2 
+  	vAmount = vCounter*90 + i*50
   elif count["V"] >= 3:
   	i = count["V"] % 3  
     	aCounter = count["V"] / 3
