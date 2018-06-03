@@ -46,26 +46,6 @@ def checkout(skus):
   groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
   bundleQueue = []
 
-  # TODO: Use a Queue, FIFO
-  if groupBuy >= 3:
-  	groupCounter = groupBuy / 3
-  	bundledItemLength = 3*groupCounter
-  	j = 0
-  	for i in range(bundledItemLength):
-  		if count[group[j]] > 0:
-  			count[group[j]] -= 1
-  		else:
-  			while count[group[j]] <= 0:
-  				j += 1
-  			count[group[j]] -= 1
-
-  noOfferItemsValue = 0
-
-  for char in items:
-  	if char in noOfferPrices.keys():
-  		noOfferItemsValue += count[char] * noOfferPrices[char]
-
-
   for i in skus:
   	if i in group:
   		bundleQueue.append(i)
@@ -77,6 +57,7 @@ def checkout(skus):
   	bundledItemLength = 3*groupCounter
   	for i in range(bundledItemLength):
   		bundleItem = bundleQueue.pop(0)
+  		print bundleItem
   		count[bundleItem] -= 1
 
   noOfferItemsValue = 0
@@ -215,4 +196,4 @@ def checkout(skus):
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue + bundle
 
-print checkout('ZZZS')
+print checkout('SSSZ')
