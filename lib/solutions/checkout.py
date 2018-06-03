@@ -4,6 +4,13 @@
 # skus = unicode string
 #
 
+def firstAOffer(value):
+    i = value % 3  
+    aCounter = value / 3 
+    aAmount = aCounter*130 + i*50
+
+    return aAmount
+
 def checkout(skus):
 
   if not isinstance(skus, unicode):
@@ -25,15 +32,21 @@ def checkout(skus):
       aAmount = aCounter*130 + i*50
   elif "A" in items and count["A"] >= 5:
   	  i = count["A"] % 5  
-      aCounter = count["A"] / 5 
-      aAmount = aCounter*200 + i*50
+      aCounter = count["A"] / 5
+      if i >= 3:
+      	otherAmount = firstAOffer(i)
+      	aAmount = aCounter*200 + otherAmount
+      else:
+      	aAmount = aCounter*200 + i*50
   elif "A" in items:
   	aAmount = count["A"] * 50
+
 
   if "E" in items and count["E"] >=:
   	eCounter = count["E"] / 2
   	count["B"] -= eCounter
   	eAmount = count["E"]*40
+
 
   if "B" in items and count["B"] >= 2:
       j = count["B"] % 2  
