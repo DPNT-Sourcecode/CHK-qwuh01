@@ -196,6 +196,7 @@ def checkout(skus):
   	qAmount = count["Q"] * 30
 
   bundle = groupCounter * 45
+  print bundle
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue + bundle
 
