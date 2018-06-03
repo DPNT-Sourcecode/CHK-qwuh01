@@ -55,7 +55,3 @@ def checkout(skus):
   result = aAmount + bAmount + cAmount + dAmount
 
   return int(result)
-
-# Exact tests are passing locally, but failing when being sent to the server. 30min of penalty obtained for working script.
-# 
-print checkout("A")
