@@ -41,6 +41,10 @@ def checkout(skus):
 
   items = count.keys()
 
+  groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
+
+  if groupBuy
+
   noOfferItemsValue = 0
 
   for char in items:
@@ -117,9 +121,9 @@ def checkout(skus):
   if count["K"] >= 2:
     j = count["K"] % 2  
     kCounter = count["K"] / 2
-    kAmount = kCounter*150 + j*80
+    kAmount = kCounter*120 + j*70
   else:
-  	kAmount = count["K"] * 80
+  	kAmount = count["K"] * 70
 
   if count["N"] >= 3: 
     nCounter = count["N"] / 3
