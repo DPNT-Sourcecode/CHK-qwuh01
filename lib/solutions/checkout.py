@@ -27,8 +27,8 @@ def vOffer(value):
 
 def checkout(skus):
 
-  if not isinstance(skus, unicode):
-    return -1
+  #if not isinstance(skus, unicode):
+    #return -1
 
   aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount, uAmount, rAmount, qAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
@@ -197,3 +197,5 @@ def checkout(skus):
   bundle = groupCounter * 45
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue + bundle
+
+print checkout('ZZZS')
