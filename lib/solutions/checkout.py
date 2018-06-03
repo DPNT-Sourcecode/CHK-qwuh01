@@ -42,6 +42,7 @@ def checkout(skus):
   items = count.keys()
 
   group = ['S', 'T', 'X', 'Y', 'Z']
+  groupCounter = 0
   groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
 
   if groupBuy >= 3:
