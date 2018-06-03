@@ -11,6 +11,13 @@ def firstAOffer(value):
 
     return aAmount
 
+def hOffer(value):
+	i = value % 5  
+    hCounter = value / 5 
+    hAmount = aCounter*45 + i*10
+
+    return hAmount
+
 def checkout(skus):
 
   #if not isinstance(skus, unicode):
@@ -100,7 +107,7 @@ def checkout(skus):
   	i = count["H"] % 10  
     	aCounter = count["A"] / 10
     	if i >= 5:
-      		otherAmount = firstAOffer(i)
+      		otherAmount = hOffer(i)
       		hAmount = hCounter*80 + otherAmount
     	else:
       		hAmount = hCounter*80 + i*10
