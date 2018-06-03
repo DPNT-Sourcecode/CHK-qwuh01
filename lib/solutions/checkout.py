@@ -182,4 +182,4 @@ def checkout(skus):
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue
 
-print checkout("B")
+print checkout("UUUUU")
