@@ -4,23 +4,19 @@
 # skus = unicode string
 #
 
-def checkout():
-	return -1
-
-
 def checkout(skus):
 
-	valids = ['A', 'B', 'C', 'D']
+  valids = ['A', 'B', 'C', 'D']
 
-	count = {}
+  count = {}
 
-    for char in skus:
-    	if char not in valids:
-    		return -1
-    	if char in count:
-    		count[char] += 1
-    	else:
-    		count[char] = 1
+  for char in skus:
+    if char not in valids:
+      return -1
+      if char in count:
+        count[char] += 1
+      else:
+    	count[char] = 1
 
 
     if count['A'] >= 3:
