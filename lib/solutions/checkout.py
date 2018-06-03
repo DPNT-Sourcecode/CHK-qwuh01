@@ -13,12 +13,15 @@ def firstAOffer(value):
 
 def checkout(skus):
 
-  if not isinstance(skus, unicode):
-    return -1
+  #if not isinstance(skus, unicode):
+    #return -1
 
   aAmount, bAmount, cAmount, dAmount, eAmount, fAmount = 0, 0, 0, 0, 0, 0
 
-  count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E'), 'F': skus.count('F')}
+  count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E'), 'F': skus.count('F'),
+  'G': skus.count('G'), 'H': skus.count('H'), 'I': skus.count('I'), 'J': skus.count('J'), 'K': skus.count('K'), 'L': skus.count('L'), 'M': skus.count('M'),
+  'N': skus.count('N'), 'O': skus.count('O'), 'P': skus.count('P'), 'Q': skus.count('Q'), 'R': skus.count('R'), 'S': skus.count('S'), 'T': skus.count('T'),
+  'U': skus.count('U'), 'V': skus.count('V'), 'W': skus.count('W'), 'X': skus.count('X'), 'Y': skus.count('Y'), 'Z': skus.count('Z')}
 
   items = count.keys()
 
@@ -81,3 +84,5 @@ def checkout(skus):
     fAmount = count["F"] * 10
 
   return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
+
+print checkout('A')
