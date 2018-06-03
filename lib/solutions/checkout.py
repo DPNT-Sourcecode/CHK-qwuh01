@@ -51,7 +51,7 @@ def checkout(skus):
   	bundledItemLength = 3*groupCounter
   	j = 0
   	for i in range(bundledItemLength):
-  		if count[group[j]] != 0:
+  		if count[group[j]] > 0:
   			count[group[j]] -= 1
   		else:
   			j += 1
@@ -61,7 +61,7 @@ def checkout(skus):
 
   for char in items:
   	if char in noOfferPrices.keys():
-  		print '{0}:{1}'.format(char, noOfferPrices[char])
+  		print '{0}:{1}'.format(char, count[char])
   		noOfferItemsValue += count[char] * noOfferPrices[char]
 
 
