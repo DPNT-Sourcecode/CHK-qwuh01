@@ -102,7 +102,7 @@ def checkout(skus):
   if count["H"] >= 5 and count["H"] < 10:
   	i = count["H"] % 5  
   	hCounter = count["H"] / 5 
-  	hAmount = hCounter*130 + i*10
+  	hAmount = hCounter*45 + i*10
   elif count["H"] >= 10:
   	i = count["H"] % 10  
     	hCounter = count["H"] / 10
@@ -177,4 +177,4 @@ def checkout(skus):
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue
 
-print checkout('HHHHH')
+print checkout('UUU')
