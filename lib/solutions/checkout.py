@@ -18,7 +18,7 @@ def checkout(skus):
 
   aAmount, bAmount, cAmount, dAmount, eAmount, fAmount = 0, 0, 0, 0, 0, 0
 
-  noOfferPrices = {}
+  noOfferPrices = {'C': 20, 'D': 15, 'G':20, 'I':35, 'J':60, 'L':90, 'M':15, 'O':10, 'S':30, 'T':20, 'W':20, 'X':90, 'Y':10, 'Z':50}
 
   count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E'), 'F': skus.count('F'),
   'G': skus.count('G'), 'H': skus.count('H'), 'I': skus.count('I'), 'J': skus.count('J'), 'K': skus.count('K'), 'L': skus.count('L'), 'M': skus.count('M'),
