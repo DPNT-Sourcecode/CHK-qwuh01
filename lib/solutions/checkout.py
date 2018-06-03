@@ -15,6 +15,10 @@ def checkout(skus):
 
   items = count.keys()
 
+  for i in skus:
+  	if i not in items:
+  		return -1
+
   if "A" in items and count["A"] >= 3:
       i = count["A"] % 3  
       aCounter = count["A"] / 3 
