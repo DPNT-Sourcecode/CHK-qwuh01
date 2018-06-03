@@ -16,9 +16,9 @@ def checkout(skus):
   if not isinstance(skus, unicode):
     return -1
 
-  aAmount, bAmount, cAmount, dAmount, eAmount = 0, 0, 0, 0, 0
+  aAmount, bAmount, cAmount, dAmount, eAmount, fAmount = 0, 0, 0, 0, 0, 0
 
-  count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E')}
+  count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D'), 'E': skus.count('E'), 'F': skus.count('F')}
 
   items = count.keys()
 
@@ -68,4 +68,4 @@ def checkout(skus):
   if "D" in items:  
     dAmount = count["D"] * 15
 
-  return aAmount + bAmount + cAmount + dAmount + eAmount
+  return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
