@@ -13,8 +13,8 @@ def firstAOffer(value):
 
 def checkout(skus):
 
-  if not isinstance(skus, unicode):
-    return -1
+  #if not isinstance(skus, unicode):
+    #return -1
 
   aAmount, bAmount, cAmount, dAmount, eAmount = 0, 0, 0, 0, 0
 
@@ -47,6 +47,8 @@ def checkout(skus):
   	eCounter = count["E"] / 2
   	count["B"] -= eCounter
   	eAmount = count["E"]*40
+  elif "E" in items:
+  	eAmount = count["E"]*40
 
 
   if "B" in items and count["B"] >= 2:
@@ -65,3 +67,5 @@ def checkout(skus):
     dAmount = count["D"] * 15
 
   return aAmount + bAmount + cAmount + dAmount + eAmount
+
+print checkout("EE")
