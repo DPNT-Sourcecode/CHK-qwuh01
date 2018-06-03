@@ -4,56 +4,47 @@
 # skus = unicode string
 #
 
+def checkout():
+	return -1
+
+
 def checkout(skus):
 
-  if type(skus) != type(""):
-    return -1
+	valids = ['A', 'B', 'C', 'D']
 
-  valids = ["A", "B", "C", "D"]
-  aAmount, bAmount, cAmount, dAmount = 0, 0, 0, 0
+	count = {}
 
-  count = {}
-
-  for char in skus:
-      if char in valids and char in count:
-        count[char] += 1
-      elif char in valids:
-    	count[char] = 1
+    for char in skus:
+    	if char not in valids:
+    		return -1
+    	if char in count:
+    		count[char] += 1
+    	else:
+    		count[char] = 1
 
 
-  if "A" in count.keys() and count["A"] >= 3:
-    i = count["A"]
-    aCounter = 0
-    while i >= 3:
-      i = count["A"] % 3  
-      aCounter += 1
+    if count['A'] >= 3:
+    	i = count['A']
+    	aCounter = 0
+    	while i >= 3:
+    		i = count['A'] % 3  
+    		aCounter += 1
 
-      aAmount = aCounter*130 + i*50
-  elif "A" in count.keys():
-  	aAmount = count["A"] * 50
+    	aAmount = aCounter*130 + i*50
 
+    if count['B'] >= 2:
+    	j = count['B']
+    	bCounter = 0
+    	while j >= 2:
+    		j = count['B'] % 2  
+    		bCounter += 1
 
-  if "B" in count.keys() and count["B"] >= 2:
-    j = count["B"]
-    bCounter = 0
-    while j >= 2:
-      j = count["B"] % 2  
-      bCounter += 1
+    	bAmount = bCounter*45 + 30
 
-      bAmount = bCounter*45 + j*30
-  elif "B" in count.keys():
-  	bAmount = count["B"] * 30
+    cAmount = count['C'] * 20
+    dAmount = count['D'] * 15
 
-
-  if "C" in count.keys():
-    cAmount = count["C"] * 20
+    return aAmount + bAmount + cAmount + dAmount
 
 
-  if "D" in count.keys():  
-    dAmount = count["D"] * 15
 
-  result = aAmount + bAmount + cAmount + dAmount
-
-  return int(result)
-
-# Exact tests are passing locally, but failing when being sent to the server. 30min of penalty obtained for working script.
