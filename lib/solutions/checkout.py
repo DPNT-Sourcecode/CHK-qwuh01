@@ -70,12 +70,10 @@ def checkout(skus):
 
   if "F" in items:
     if count["F"] >= 3:
-      fCounter = count["F"] / 3
+      fCounter = count["F"] / 2
       count["F"] -= fCounter
       fAmount = count["F"] * 10
     else: 
      fAmount = count["F"] * 10
 
   return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
-
-print checkout("FFF")
