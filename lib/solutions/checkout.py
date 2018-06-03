@@ -68,15 +68,17 @@ def checkout(skus):
   if "D" in items:  
     dAmount = count["D"] * 15
 
-  if "F" in items:
-    if count["F"] >= 3:
-      if count["F"] != 3:
-        count["F"] -= 2
+  if "F" in items and count["F"] == 3:
+      fCounter = count["F"] / 2
+      count["F"] -= fCounter
+      fAmount = count["F"] * 10
+  if "F" in items and count["F"] > 3:
+  	  count["F"] -= 2
       fCounter = count["F"] / 2
       count["F"] -= fCounter
       fAmount = count["F"] * 10 + 20
-    else: 
-     fAmount = count["F"] * 10
+  else: 
+    fAmount = count["F"] * 10
 
   return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
 
