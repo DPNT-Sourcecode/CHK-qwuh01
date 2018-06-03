@@ -162,13 +162,13 @@ def checkout(skus):
       uCounter = count["U"] / 3
       count["U"] -= uCounter
       uAmount = count["U"] * 40
-  if "F" in items and count["F"] > 3:
-  	  	count["F"] -= 2
-  		fCounter = count["F"] / 2
-		count["F"] -= fCounter
-		fAmount = count["F"] * 10 + 20
+  if count["U"] > 4:
+  	  	count["U"] -= 3
+  		uCounter = count["U"] / 3
+		count["U"] -= uCounter
+		uAmount = count["U"] * 40 + 120
   else: 
-    fAmount = count["F"] * 10
+    uAmount = count["U"] * 40
 
   return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount
 
