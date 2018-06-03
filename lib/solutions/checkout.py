@@ -23,7 +23,7 @@ def checkout(skus):
   #if not isinstance(skus, unicode):
     #return -1
 
-  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount = 0, 0, 0, 0, 0, 0
+  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount = 0, 0, 0, 0, 0, 0, 0, 0
 
   noOfferPrices = {'C': 20, 'D': 15, 'G':20, 'I':35, 'J':60, 'L':90, 'M':15, 'O':10, 'S':30, 'T':20, 'W':20, 'X':90, 'Y':10, 'Z':50}
 
@@ -121,12 +121,13 @@ def checkout(skus):
   else:
   	kAmount = count["K"] * 80
 
-  if count["N"] >= 5:
-    j = count["N"] % 5  
-    nCounter = count["N"] / 5
-    nAmount = nCounter*200 + j*50
+  if count["N"] >= 3: 
+    nCounter = count["N"] / 3
+    if count["M"] >= nCounter:
+    	noOfferItemsValue -= noOfferPrices["M"] * nCounter
+    nAmount = count["N"] * 40
   else:
-  	nAmount = count["N"] * 50
+  	nAmount = count["N"] * 40
 
   if count["P"] >= 5:
     j = count["P"] % 5  
