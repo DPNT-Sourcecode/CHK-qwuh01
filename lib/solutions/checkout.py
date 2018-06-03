@@ -52,7 +52,8 @@ def checkout(skus):
   if "D" in count.keys():  
     dAmount = count["D"] * 15
 
+  result = aAmount + bAmount + cAmount + dAmount
 
-  return aAmount + bAmount + cAmount + dAmount
+  return result
 
-print sum(1,2)
+  print checkout("A")
