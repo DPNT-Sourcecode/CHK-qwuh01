@@ -27,17 +27,17 @@ def checkout(skus):
   		return -1
 
   if "A" in items and count["A"] >= 3 and count["A"] < 5:
-      i = count["A"] % 3  
-      aCounter = count["A"] / 3 
-      aAmount = aCounter*130 + i*50
+    i = count["A"] % 3  
+    aCounter = count["A"] / 3 
+    aAmount = aCounter*130 + i*50
   elif "A" in items and count["A"] >= 5:
-  	  i = count["A"] % 5  
-      aCounter = count["A"] / 5
-      if i >= 3:
-      	otherAmount = firstAOffer(i)
-      	aAmount = aCounter*200 + otherAmount
-      else:
-      	aAmount = aCounter*200 + i*50
+  	i = count["A"] % 5  
+    aCounter = count["A"] / 5
+    if i >= 3:
+      otherAmount = firstAOffer(i)
+      aAmount = aCounter*200 + otherAmount
+    else:
+      aAmount = aCounter*200 + i*50
   elif "A" in items:
   	aAmount = count["A"] * 50
 
