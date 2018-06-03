@@ -121,13 +121,20 @@ def checkout(skus):
   else:
   	kAmount = count["K"] * 80
 
-  if count["K"] >= 2:
-    j = count["K"] % 2  
-    kCounter = count["K"] / 2
-    kAmount = kCounter*150 + j*80
+  if count["N"] >= 5:
+    j = count["N"] % 5  
+    nCounter = count["N"] / 5
+    nAmount = nCounter*200 + j*50
   else:
-  	kAmount = count["K"] * 80
+  	nAmount = count["N"] * 50
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount
+  if count["P"] >= 5:
+    j = count["P"] % 5  
+    pCounter = count["P"] / 5
+    pAmount = pCounter*200 + j*50
+  else:
+  	pAmount = count["P"] * 50
+
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount
 
 print checkout('CD')
