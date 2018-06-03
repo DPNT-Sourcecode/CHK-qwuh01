@@ -19,10 +19,14 @@ def checkout(skus):
   	if i not in items:
   		return -1
 
-  if "A" in items and count["A"] >= 3:
+  if "A" in items and count["A"] >= 3 and count["A"] < 5:
       i = count["A"] % 3  
       aCounter = count["A"] / 3 
       aAmount = aCounter*130 + i*50
+  elif "A" in items and count["A"] >= 5:
+  	  i = count["A"] % 5  
+      aCounter = count["A"] / 5 
+      aAmount = aCounter*200 + i*50
   elif "A" in items:
   	aAmount = count["A"] * 50
 
