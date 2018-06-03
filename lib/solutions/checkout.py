@@ -44,6 +44,7 @@ def checkout(skus):
   group = ['S', 'T', 'X', 'Y', 'Z']
   groupCounter = 0
   groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
+  bundleQueue = []
 
   # TODO: Use a Queue, FIFO
   if groupBuy >= 3:
@@ -66,8 +67,23 @@ def checkout(skus):
 
 
   for i in skus:
+  	if i in group:
+  		bundleQueue.append(i)
   	if i not in items:
   	  return -1
+
+  if groupBuy >= 3:
+  	groupCounter = groupBuy / 3
+  	bundledItemLength = 3*groupCounter
+  	for i in range(bundledItemLength):
+  		bundleItem = bundleQueue.pop(0)
+  		count[bundleItem] -= 1
+
+  noOfferItemsValue = 0
+
+  for char in items:
+  	if char in noOfferPrices.keys():
+  		noOfferItemsValue += count[char] * noOfferPrices[char]
 
   if "A" in items and count["A"] >= 3 and count["A"] < 5:
     i = count["A"] % 3  
