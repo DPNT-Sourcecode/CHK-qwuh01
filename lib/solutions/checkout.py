@@ -30,7 +30,7 @@ def checkout(skus):
   noOfferItemsValue = 0
 
   for char in items:
-  	if char in noOfferPrices.items():
+  	if char in noOfferPrices.keys():
   		noOfferItemsValue += count[char] * noOfferPrices[char]
 
 
@@ -73,12 +73,12 @@ def checkout(skus):
   	bAmount = count["B"] * 30
 
 
-  if "C" in items:
-    cAmount = count["C"] * 20
+  #if "C" in items:
+    #cAmount = count["C"] * 20
 
 
-  if "D" in items:  
-    dAmount = count["D"] * 15
+  #if "D" in items:  
+    #dAmount = count["D"] * 15
 
   if "F" in items and count["F"] == 3:
       fCounter = count["F"] / 2
@@ -92,6 +92,6 @@ def checkout(skus):
   else: 
     fAmount = count["F"] * 10
 
-  return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue
 
-print checkout('A')
+print checkout('CD')
