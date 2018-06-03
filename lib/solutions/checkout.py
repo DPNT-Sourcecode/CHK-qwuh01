@@ -26,6 +26,10 @@ def checkout(skus):
   elif "A" in items:
   	aAmount = count["A"] * 50
 
+  if "E" in items and count["E"] >=:
+  	eCounter = count["E"] / 2
+  	count["B"] -= eCounter
+  	eAmount = count["E"]*40
 
   if "B" in items and count["B"] >= 2:
       j = count["B"] % 2  
@@ -42,10 +46,4 @@ def checkout(skus):
   if "D" in items:  
     dAmount = count["D"] * 15
 
-  if "E" in items and count["E"] >=:
-  	k = count["E"] % 2
-  	eCounter = count["E"] / 2
-  	eAmount = k*40
-
-
-  return aAmount + bAmount + cAmount + dAmount
+  return aAmount + bAmount + cAmount + dAmount + eAmount
