@@ -6,16 +6,18 @@
 
 def checkout(skus):
 
+  if type(skus) != type(''):
+    return -1
+
   valids = ['A', 'B', 'C', 'D']
+  aAmount, bAmount, cAmount, dAmount = 0, 0, 0, 0
 
   count = {}
 
   for char in skus:
-    if char not in valids:
-      return -1
-      if char in count:
+      if char in valids and char in count:
         count[char] += 1
-      else:
+      elif char in valids:
     	count[char] = 1
 
 
@@ -42,5 +44,5 @@ def checkout(skus):
 
     return aAmount + bAmount + cAmount + dAmount
 
-
+print checkout('ABCD')
 
