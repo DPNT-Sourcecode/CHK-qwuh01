@@ -27,8 +27,8 @@ def vOffer(value):
 
 def checkout(skus):
 
-  if not isinstance(skus, unicode):
-    return -1
+  #if not isinstance(skus, unicode):
+    #return -1
 
   aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount, uAmount, rAmount, qAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
@@ -99,7 +99,7 @@ def checkout(skus):
   else: 
     fAmount = count["F"] * 10
 
-  if count["H"] > 5 and count["H"] < 10:
+  if count["H"] >= 5 and count["H"] < 10:
   	i = count["H"] % 5  
   	hCounter = count["H"] / 5 
   	hAmount = hCounter*130 + i*10
@@ -142,7 +142,7 @@ def checkout(skus):
   	vAmount = vCounter*90 + i*50
   elif count["V"] >= 3:
   	i = count["V"] % 3  
-    	aCounter = count["V"] / 3
+    	vCounter = count["V"] / 3
     	if i >= 2:
       		otherAmount = vOffer(i)
       		vAmount = vCounter*130 + otherAmount
@@ -176,3 +176,5 @@ def checkout(skus):
 
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue
+
+print checkout('HHHHH')
