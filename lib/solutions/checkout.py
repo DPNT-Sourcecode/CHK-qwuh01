@@ -27,6 +27,13 @@ def checkout(skus):
 
   items = count.keys()
 
+  noOfferItemsValue = 0
+
+  for char in items:
+  	if char in noOfferPrices.items():
+  		noOfferItemsValue += count[char] * noOfferPrices[char]
+
+
   for i in skus:
   	if i not in items:
   	  return -1
