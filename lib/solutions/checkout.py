@@ -77,3 +77,5 @@ def checkout(skus):
      fAmount = count["F"] * 10
 
   return aAmount + bAmount + cAmount + dAmount + eAmount + fAmount
+
+print checkout('FFFFFF')
