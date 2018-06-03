@@ -96,7 +96,17 @@ def checkout(skus):
   	i = count["H"] % 5  
     hCounter = count["H"] / 5 
     hAmount = hCounter*130 + i*10
+  elif count["H"] >= 10:
+  	i = count["H"] % 10  
+    	aCounter = count["A"] / 10
+    	if i >= 5:
+      		otherAmount = firstAOffer(i)
+      		hAmount = hCounter*80 + otherAmount
+    	else:
+      		hAmount = hCounter*80 + i*10
+  else:
+  	hAmount = count["H"] * 10
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount
 
 print checkout('CD')
