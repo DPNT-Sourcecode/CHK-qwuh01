@@ -54,21 +54,20 @@ def checkout(skus):
   		if count[group[j]] > 0:
   			count[group[j]] -= 1
   		else:
-  			j += 1
+  			while count[group[j]] <= 0:
+  				j += 1
   			count[group[j]] -= 1
 
   noOfferItemsValue = 0
 
   for char in items:
   	if char in noOfferPrices.keys():
-  		print '{0}:{1}'.format(char, count[char])
   		noOfferItemsValue += count[char] * noOfferPrices[char]
 
 
   for i in skus:
   	if i not in items:
   	  return -1
-
 
   if "A" in items and count["A"] >= 3 and count["A"] < 5:
     i = count["A"] % 3  
@@ -200,4 +199,4 @@ def checkout(skus):
 
   return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue + bundle
 
-print checkout('ZZZ')
+print checkout('ZZZS')
