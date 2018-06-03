@@ -41,11 +41,19 @@ def checkout(skus):
 
   items = count.keys()
 
+  group = ['S', 'T', 'X', 'Y', 'Z']
   groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
 
   if groupBuy >= 3:
-  	i = groupBuy % 3
   	groupCounter = groupBuy / 3
+  	bundledItemLength = 3*groupCounter
+  	j = 0
+  	for i in range(bundledItemLength):
+  		if count[group[j]] != 0:
+  			count[group[j]] -= 1
+  		else:
+  			j += 1
+  			count[group[j]] -= 1
 
   noOfferItemsValue = 0
 
