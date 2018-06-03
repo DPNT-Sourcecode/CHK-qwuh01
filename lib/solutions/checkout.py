@@ -13,8 +13,8 @@ def firstAOffer(value):
 
 def hOffer(value):
 	i = value % 5  
-    hCounter = value / 5 
-    hAmount = hCounter*45 + i*10
+	hCounter = value / 5 
+	hAmount = hCounter*45 + i*10
 
     return hAmount
 
@@ -170,6 +170,14 @@ def checkout(skus):
   else:
   	rAmount = count["R"]*50
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount
+  if count["Q"] >= 3:
+    j = count["Q"] % 3  
+    qCounter = count["Q"] / 3
+    qAmount = qCounter*80 + j*30
+  else:
+  	if count["Q"] < 0:
+  		count["Q"] = 0
+  	bAmount = count["Q"] * 30
 
-print checkout('CD')
+
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount
