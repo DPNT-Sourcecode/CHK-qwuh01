@@ -52,18 +52,19 @@ def checkout(skus):
   	if i not in items:
   	  return -1
 
+  #TODO: Use a Priority Queue in terms of smallest value
   if groupBuy >= 3:
   	groupCounter = groupBuy / 3
   	bundledItemLength = 3*groupCounter
   	for i in range(bundledItemLength):
   		bundleItem = bundleQueue.pop(0)
-  		print bundleItem
   		count[bundleItem] -= 1
 
   noOfferItemsValue = 0
 
   for char in items:
   	if char in noOfferPrices.keys():
+  		print '{0}:{1}'.format(char, count[char])
   		noOfferItemsValue += count[char] * noOfferPrices[char]
 
   if "A" in items and count["A"] >= 3 and count["A"] < 5:
