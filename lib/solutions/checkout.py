@@ -55,5 +55,3 @@ def checkout(skus):
   result = aAmount + bAmount + cAmount + dAmount
 
   return result
-
-  print checkout("A")
