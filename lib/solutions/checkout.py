@@ -27,10 +27,10 @@ def vOffer(value):
 
 def checkout(skus):
 
-  #if not isinstance(skus, unicode):
-    #return -1
+  if not isinstance(skus, unicode):
+    return -1
 
-  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount, uAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount, uAmount, rAmount, qAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
   noOfferPrices = {'C': 20, 'D': 15, 'G':20, 'I':35, 'J':60, 'L':90, 'M':15, 'O':10, 'S':30, 'T':20, 'W':20, 'X':90, 'Y':10, 'Z':50}
 
@@ -86,13 +86,6 @@ def checkout(skus):
   		count["B"] = 0
   	bAmount = count["B"] * 30
 
-
-  #if "C" in items:
-    #cAmount = count["C"] * 20
-
-
-  #if "D" in items:  
-    #dAmount = count["D"] * 15
 
   if "F" in items and count["F"] == 3:
       fCounter = count["F"] / 2
@@ -170,6 +163,13 @@ def checkout(skus):
   else: 
     uAmount = count["U"] * 40
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount
+  if count["R"] >= 3:
+  	rCounter = count["R"] / 3
+  	count["Q"] -= rCounter
+  	rAmount = count["R"]*50
+  else:
+  	rAmount = count["R"]*50
+
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount
 
 print checkout('CD')
