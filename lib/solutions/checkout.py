@@ -61,6 +61,7 @@ def checkout(skus):
 
   for char in items:
   	if char in noOfferPrices.keys():
+  		print '{0}:{1}'.format(char, noOfferPrices[char])
   		noOfferItemsValue += count[char] * noOfferPrices[char]
 
 
@@ -197,7 +198,6 @@ def checkout(skus):
 
   bundle = groupCounter * 45
 
-  return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + bundle
+  return aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue + bundle
 
-# aAmount + bAmount + eAmount + fAmount + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount + rAmount + qAmount + noOfferItemsValue +
 print checkout('ZZZ')
