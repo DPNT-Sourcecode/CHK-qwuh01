@@ -9,17 +9,9 @@ def checkout(skus):
   if type(skus) != type(""):
     return -1
 
-  valids = ["A", "B", "C", "D"]
   aAmount, bAmount, cAmount, dAmount = 0, 0, 0, 0
 
-  count = {}
-
-  for char in skus:
-      if char in valids and char in count:
-        count[char] += 1
-      elif char in valids:
-    	count[char] = 1
-
+  count = {'A': skus.count('A'), 'B': skus.count('B'), 'C': skus.count('C'), 'D': skus.count('D')}
 
   if "A" in count.keys() and count["A"] >= 3:
       i = count["A"] % 3  
@@ -31,7 +23,7 @@ def checkout(skus):
 
   if "B" in count.keys() and count["B"] >= 2:
       j = count["B"] % 2  
-      bCounter = count["B"] % 2
+      bCounter = count["B"] / 2
       bAmount = bCounter*45 + j*30
   elif "B" in count.keys():
   	bAmount = count["B"] * 30
@@ -45,6 +37,3 @@ def checkout(skus):
     dAmount = count["D"] * 15
 
   return aAmount + bAmount + cAmount + dAmount
-
-print checkout('AAABBBBB')
-print 130+90+30
