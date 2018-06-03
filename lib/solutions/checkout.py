@@ -30,7 +30,7 @@ def checkout(skus):
   #if not isinstance(skus, unicode):
     #return -1
 
-  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0
+  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount, uAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
   noOfferPrices = {'C': 20, 'D': 15, 'G':20, 'I':35, 'J':60, 'L':90, 'M':15, 'O':10, 'S':30, 'T':20, 'W':20, 'X':90, 'Y':10, 'Z':50}
 
@@ -158,6 +158,18 @@ def checkout(skus):
   else:
   	vAmount = count["V"] * 50
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount
+  if count["U"] == 4:
+      uCounter = count["U"] / 3
+      count["U"] -= uCounter
+      uAmount = count["U"] * 40
+  if "F" in items and count["F"] > 3:
+  	  	count["F"] -= 2
+  		fCounter = count["F"] / 2
+		count["F"] -= fCounter
+		fAmount = count["F"] * 10 + 20
+  else: 
+    fAmount = count["F"] * 10
+
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount + uAmount
 
 print checkout('CD')
