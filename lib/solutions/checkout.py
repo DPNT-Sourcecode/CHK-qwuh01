@@ -56,4 +56,4 @@ def checkout(skus):
 
   return int(result)
 
-# Exact tests are passing locally, but failing when being sent to the server.
+# Exact tests are passing locally, but failing when being sent to the server. 30min of penalty obtained for working script.
