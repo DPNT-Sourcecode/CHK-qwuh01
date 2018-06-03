@@ -45,6 +45,7 @@ def checkout(skus):
   groupCounter = 0
   groupBuy = count['S'] + count['T'] + count['X'] + count['Y'] + count['Z']
 
+  # TODO: Use a Queue, FIFO
   if groupBuy >= 3:
   	groupCounter = groupBuy / 3
   	bundledItemLength = 3*groupCounter
