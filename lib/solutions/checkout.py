@@ -151,7 +151,7 @@ def checkout(skus):
   else:
   	vAmount = count["V"] * 50
 
-  if count["U"] == 4:
+  if count["U"] >= 4:
       uCounter = count["U"] / 3
       count["U"] -= uCounter
       uAmount = count["U"] * 40
