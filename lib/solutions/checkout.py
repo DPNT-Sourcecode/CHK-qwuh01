@@ -28,7 +28,7 @@ def checkout(skus):
       i = count["A"] % 3  
       aCounter += 1
 
-      aAmount = aCounter*130 + i*50
+    aAmount = aCounter*130 + i*50
   elif "A" in count.keys():
   	aAmount = count["A"] * 50
 
@@ -40,7 +40,7 @@ def checkout(skus):
       j = count["B"] % 2  
       bCounter += 1
 
-      bAmount = bCounter*45 + j*30
+    bAmount = bCounter*45 + j*30
   elif "B" in count.keys():
   	bAmount = count["B"] * 30
 
@@ -57,3 +57,5 @@ def checkout(skus):
   return int(result)
 
 # Exact tests are passing locally, but failing when being sent to the server. 30min of penalty obtained for working script.
+# 
+print checkout("A")
