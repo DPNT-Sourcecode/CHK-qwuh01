@@ -14,16 +14,23 @@ def firstAOffer(value):
 def hOffer(value):
 	i = value % 5  
     hCounter = value / 5 
-    hAmount = aCounter*45 + i*10
+    hAmount = hCounter*45 + i*10
 
     return hAmount
+
+def vOffer(value):
+	i = value % 2  
+    vCounter = value / 2 
+    vAmount = vCounter*90 + i*50
+
+    return vAmount
 
 def checkout(skus):
 
   #if not isinstance(skus, unicode):
     #return -1
 
-  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount = 0, 0, 0, 0, 0, 0, 0, 0
+  aAmount, bAmount, eAmount, fAmount, hAmount, kAmount, pAmount, nAmount, vAmount = 0, 0, 0, 0, 0, 0, 0, 0, 0
 
   noOfferPrices = {'C': 20, 'D': 15, 'G':20, 'I':35, 'J':60, 'L':90, 'M':15, 'O':10, 'S':30, 'T':20, 'W':20, 'X':90, 'Y':10, 'Z':50}
 
@@ -136,6 +143,21 @@ def checkout(skus):
   else:
   	pAmount = count["P"] * 50
 
-  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount
+  if count["V"] = 2:
+  	i = count["V"] % 2  
+    vCounter = count["V"] / 2 
+    vAmount = vCounter*90 + i*50
+  elif count["V"] >= 3:
+  	i = count["V"] % 3  
+    	aCounter = count["V"] / 3
+    	if i >= 2:
+      		otherAmount = vOffer(i)
+      		vAmount = vCounter*130 + otherAmount
+    	else:
+      		vAmount = vCounter*130 + i*50
+  else:
+  	vAmount = count["V"] * 50
+
+  return aAmount + bAmount + eAmount + fAmount + noOfferItemsValue + hAmount + kAmount + pAmount + nAmount + vAmount
 
 print checkout('CD')
